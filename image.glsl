@@ -13,5 +13,5 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
   
   vec3 col = mix(sun, sky, smoothstep(0.0, 1.0, h));
   col *= 0.8 + 0.2 * sin(h * 60.0 - t * 6.0);
-  fragColor = mix(vec4(col, 1.0),texture(iChannel0,uv),.5);
+  fragColor = mix(vec4(col, 1.0),texture(iChannel0,uv),3.*3.14159265*sin(iTime));
 }
