@@ -15,7 +15,7 @@
           "channel": 0
         }
       ],
-      "code": "// Sunset waves\n// Change a number. Watch it move.\nvoid mainImage( out vec4 fragColor, in vec2 fragCoord )\n{\n  vec2 uv = fragCoord / iResolution.xy;\n}\n",
+      "code": "// Sunset waves\n// Change a number. Watch it move.\nvoid mainImage( out vec4 fragColor, in vec2 fragCoord )\n{\n  vec2 uv = fragCoord / iResolution.xy;\n  float gry=sin(uv.x)*cos(uv.y)+sin(uv.y)*cos(iTime)+sin(iTime)*cos(uv.x);\n  float r=float(gry>.5 && gry<.5);\n  fragColor=vec4(r,0,0,0);\n}\n",
       "name": "Image",
       "description": "",
       "type": "image"
